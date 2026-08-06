@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+    <defs>
+        <!-- 背景发光渐变 -->
+        <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#1a2b3c" />
+            <stop offset="100%" stop-color="#0a0b14" />
+        </radialGradient>
+        
+        <!-- 霓虹发光滤镜 -->
+        <filter id="neon" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur1" />
+            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur2" />
+            <feMerge>
+                <feMergeNode in="blur2" />
+                <feMergeNode in="blur1" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+
+        <!-- 扫描线图案 -->
+        <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+            <rect width="4" height="2" fill="#000" opacity="0.15" />
+            <rect y="2" width="4" height="2" fill="#0ff" opacity="0.03" />
+        </pattern>
+
+        <!-- 背景网格图案 -->
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00f3ff" stroke-width="0.5" stroke-opacity="0.1"/>
+        </pattern>
+        
+        <!-- 暗角晕影效果 -->
+        <radialGradient id="vignette" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
+            <stop offset="50%" stop-color="#000" stop-opacity="0" />
+            <stop offset="100%" stop-color="#000" stop-opacity="0.6" />
+        </radialGradient>
+    </defs>
+
+    <!-- 背景层 -->
+    <rect width="800" height="500" fill="url(#bgGlow)" />
+    <rect width="800" height="500" fill="url(#grid)" />
+    
+    <!-- 深层水印背景 -->
+    <text x="400" y="265" font-family="'Segoe UI', 'Arial Black', sans-serif" font-size="350" font-weight="900" fill="#00f3ff" text-anchor="middle" opacity="0.03">WXT</text>
+
+    <!-- 全息瞄准镜 / HUD 圆环 -->
+    <g transform="translate(400, 265)" opacity="0.15">
+        <circle cx="0" cy="0" r="180" fill="none" stroke="#0ff" stroke-width="2" />
+        <circle cx="0" cy="0" r="160" fill="none" stroke="#0ff" stroke-width="1" stroke-dasharray="5 5" />
+        <circle cx="0" cy="0" r="200" fill="none" stroke="#f0f" stroke-width="1" stroke-dasharray="10 10" />
+        <line x1="-220" y1="0" x2="220" y2="0" stroke="#0ff" stroke-width="1" opacity="0.5" />
+        <line x1="0" y1="-220" x2="0" y2="220" stroke="#0ff" stroke-width="1" opacity="0.5" />
+        <path d="M 170 10 L 180 10 L 180 20" fill="none" stroke="#f0f" stroke-width="2" />
+        <path d="M -170 -10 L -180 -10 L -180 -20" fill="none" stroke="#f0f" stroke-width="2" />
+        <path d="M 10 170 L 10 180 L 20 180" fill="none" stroke="#f0f" stroke-width="2" />
+        <path d="M -10 -170 L -10 -180 L -20 -180" fill="none" stroke="#f0f" stroke-width="2" />
+    </g>
+
+    <!-- 十字瞄准线 -->
+    <g opacity="0.4">
+        <line x1="180" y1="265" x2="210" y2="265" stroke="#00f3ff" stroke-width="1" />
+        <line x1="590" y1="265" x2="620" y2="265" stroke="#00f3ff" stroke-width="1" />
+        <line x1="400" y1="50" x2="400" y2="80" stroke="#00f3ff" stroke-width="1" />
+        <line x1="400" y1="450" x2="400" y2="480" stroke="#00f3ff" stroke-width="1" />
+    </g>
+
+    <!-- 背景数字雨 / 二进制矩阵 -->
+    <g fill="#00f3ff" font-family="'Courier New', monospace" font-size="14" opacity="0.3">
+        <text x="100" y="100">01001001</text>
+        <text x="200" y="80">10110110</text>
+        <text x="300" y="120">01101001</text>
+        <text x="500" y="90">11001001</text>
+        <text x="600" y="110">10110110</text>
+        <text x="700" y="70">01101001</text>
+    </g>
+    <g fill="#ff00c8" font-family="'Courier New', monospace" font-size="14" opacity="0.2">
+        <text x="120" y="180">01101110</text>
+        <text x="220" y="160">10010110</text>
+        <text x="680" y="190">11101001</text>
+    </g>
+
+    <!-- 全息菱形结构 -->
+    <polygon points="400,100 450,265 400,430 350,265" fill="none" stroke="#00f3ff" stroke-width="1" opacity="0.1" />
+    <polygon points="400,120 440,265 400,410 360,265" fill="none" stroke="#ff00c8" stroke-width="0.5" opacity="0.15" />
+
+    <!-- 科技感外壳边框 -->
+    <path d="M 250 150 L 550 150 L 570 170 L 570 350 L 550 370 L 250 370 L 230 350 L 230 170 Z" fill="none" stroke="#00f3ff" stroke-width="1.5" opacity="0.4" />
+    <path d="M 260 160 L 540 160 L 560 180 L 560 340 L 540 360 L 260 360 L 240 340 L 240 180 Z" fill="none" stroke="#ff00c8" stroke-width="1" opacity="0.2" />
+    
+    <!-- 边框四角装饰 -->
+    <g>
+        <!-- 左上角 -->
+        <path d="M 230 150 L 250 150 L 250 155 L 235 155 L 235 170 L 230 170 Z" fill="#00f3ff" />
+        <!-- 右上角 -->
+        <path d="M 570 150 L 550 150 L 550 155 L 565 155 L 565 170 L 570 170 Z" fill="#ff00c8" />
+        <!-- 左下角 -->
+        <path d="M 230 350 L 250 350 L 250 345 L 235 345 L 235 330 L 230 330 Z" fill="#ff00c8" />
+        <!-- 右下角 -->
+        <path d="M 570 350 L 550 350 L 550 345 L 565 345 L 565 330 L 570 330 Z" fill="#00f3ff" />
+    </g>
+
+    <!-- 中心主文字 WXT （故障偏移分层） -->
+    <!-- 洋红色底层偏移 -->
+    <text x="400" y="265" font-family="'Segoe UI', 'Arial Black', sans-serif" font-size="180" font-weight="900" fill="#ff00c8" text-anchor="middle" dx="-6" dy="3">WXT</text>
+    <!-- 青色顶层偏移 -->
+    <text x="400" y="265" font-family="'Segoe UI', 'Arial Black', sans-serif" font-size="180" font-weight="900" fill="#00f3ff" text-anchor="middle" dx="6" dy="-3">WXT</text>
+    <!-- 白色主文字 + 霓虹发光 -->
+    <text x="400" y="265" font-family="'Segoe UI', 'Arial Black', sans-serif" font-size="180" font-weight="900" fill="#ffffff" text-anchor="middle" filter="url(#neon)">WXT</text>
+
+    <!-- 文字两侧的方括号 [ ] -->
+    <text x="400" y="265" font-family="'Courier New', monospace" font-size="100" font-weight="bold" fill="#00f3ff" text-anchor="middle" dx="-180" opacity="0.6">[</text>
+    <text x="400" y="265" font-family="'Courier New', monospace" font-size="100" font-weight="bold" fill="#00f3ff" text-anchor="middle" dx="180" opacity="0.6">]</text>
+
+    <!-- 故障切割条（覆盖在文字上产生故障效果） -->
+    <g opacity="0.8">
+        <rect x="280" y="190" width="30" height="6" fill="#00f3ff" />
+        <rect x="390" y="220" width="20" height="4" fill="#ff00c8" />
+        <rect x="460" y="200" width="15" height="5" fill="#00f3ff" />
+        <rect x="320" y="270" width="25" height="8" fill="#ff00c8" />
+        <rect x="400" y="300" width="35" height="4" fill="#00f3ff" />
+        <rect x="500" y="260" width="10" height="10" fill="#ff00c8" />
+        <rect x="250" y="240" width="15" height="6" fill="#ff00c8" />
+        <rect x="480" y="180" width="20" height="4" fill="#00f3ff" />
+    </g>
+
+    <!-- 标语与底部信息 -->
+    <text x="400" y="325" font-family="'Courier New', monospace" font-size="16" font-weight="bold" fill="#00f3ff" text-anchor="middle" letter-spacing="6" opacity="0.9">CYBER:// STUDIO</text>
+    
+    <!-- 闪烁的光标 -->
+    <text x="520" y="325" font-family="'Courier New', monospace" font-size="16" font-weight="bold" fill="#00f3ff">
+        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" />
+        _
+    </text>
+
+    <!-- 底部状态栏 -->
+    <rect x="300" y="380" width="200" height="4" fill="none" stroke="#00f3ff" stroke-width="1" opacity="0.5" />
+    <rect x="300" y="380" width="100" height="4" fill="#ff00c8" opacity="0.8" />
+    <text x="510" y="384" font-family="'Courier New', monospace" font-size="10" fill="#00f3ff" opacity="0.8">LOADING...</text>
+    
+    <!-- 底部时间戳与节点信息 -->
+    <text x="250" y="410" font-family="'Courier New', monospace" font-size="10" fill="#00f3ff" opacity="0.4">UPTIME: 4,209,312 DAYS</text>
+    <text x="550" y="410" font-family="'Courier New', monospace" font-size="10" fill="#ff00c8" opacity="0.4" text-anchor="end">NODE: 0xWXT_AI</text>
+
+    <!-- 四角电路走线装饰 -->
+    <g opacity="0.5">
+        <!-- 左上 -->
+        <path d="M 30 30 L 100 30 L 100 60" fill="none" stroke="#00f3ff" stroke-width="1.5" />
+        <circle cx="100" cy="60" r="3" fill="#00f3ff" />
+        <circle cx="30" cy="30" r="2" fill="#00f3ff" />
+        <!-- 右上 -->
+        <path d="M 770 30 L 700 30 L 700 60" fill="none" stroke="#ff00c8" stroke-width="1.5" />
+        <circle cx="700" cy="60" r="3" fill="#ff00c8" />
+        <circle cx="770" cy="30" r="2" fill="#ff00c8" />
+        <!-- 左下 -->
+        <path d="M 30 470 L 100 470 L 100 440" fill="none" stroke="#ff00c8" stroke-width="1.5" />
+        <circle cx="100" cy="440" r="3" fill="#ff00c8" />
+        <circle cx="30" cy="470" r="2" fill="#ff00c8" />
+        <!-- 右下 -->
+        <path d="M 770 470 L 700 470 L 700 440" fill="none" stroke="#00f3ff" stroke-width="1.5" />
+        <circle cx="700" cy="440" r="3" fill="#00f3ff" />
+        <circle cx="770" cy="470" r="2" fill="#00f3ff" />
+    </g>
+
+    <!-- 角落系统文字 -->
+    <text x="40" y="40" font-family="'Courier New', monospace" font-size="10" fill="#00f3ff" opacity="0.3">SECTOR::0xWXT</text>
+    <text x="760" y="40" font-family="'Courier New', monospace" font-size="10" fill="#ff00c8" opacity="0.3" text-anchor="end">FREQ::24GHz</text>
+    <text x="40" y="475" font-family="'Courier New', monospace" font-size="10" fill="#ff00c8" opacity="0.3">SIG::STRONG</text>
+    <text x="760" y="475" font-family="'Courier New', monospace" font-size="10" fill="#00f3ff" opacity="0.3" text-anchor="end">NODES::4</text>
+
+    <!-- 扫描线与暗角覆盖层（增加 CRT 显示器效果） -->
+    <rect width="800" height="500" fill="url(#scanlines)" style="pointer-events: none;" />
+    <rect width="800" height="500" fill="url(#vignette)" style="pointer-events: none; mix-blend-mode: multiply;" />
+</svg>
