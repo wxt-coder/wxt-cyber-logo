@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+    <!-- ==================== 核心标志（灰度赛博版 - 统一平行四边形角） ==================== -->
+    <!-- 设计理念：X（中灰）与 T（深灰）在中心 (400,250) 完美交叉，W（亮白）置于核心焦点 -->
+    <!-- 所有字母均统一应用 skewX(-20) 变换，形成一致的斜切平行四边形角，确保视觉统一与犀利感 -->
+    <!-- 通过阴影、主色、高光三层堆叠，塑造出干净的 3D 霓虹立体效果 -->
+    <!-- 所有分支长度、粗细完全一致，X 的四条对角线粗细均为 60 -->
+
+    <!-- 为了更精确控制粗细，我们采用路径描边方式，所有变换统一，确保宽度视觉一致 -->
+
+    <g>
+        <!-- 定义公共变换：围绕中心 (400,250) 进行 skewX(-20) -->
+        <!-- 所有字母都使用这个变换，保持风格统一 -->
+        <g transform="translate(400, 250) skewX(-20) translate(-400, -250)">
+            
+            <!-- ===== 1. T 分支（深灰基底） ===== -->
+            <!-- 水平杆：M 220 250 L 580 250；垂直杆：M 400 250 L 400 450 -->
+            <!-- 阴影层（左上偏移） -->
+            <g transform="translate(-6, -6)">
+                <path d="M 220 250 L 580 250 M 400 250 L 400 450" 
+                      fill="none" stroke="#000000" stroke-width="70" stroke-linecap="square" stroke-linejoin="miter" />
+            </g>
+            <!-- 主色层（深灰） -->
+            <path d="M 220 250 L 580 250 M 400 250 L 400 450" 
+                  fill="none" stroke="#4d4d4d" stroke-width="70" stroke-linecap="square" stroke-linejoin="miter" />
+            <!-- 高光层（右下偏移） -->
+            <g transform="translate(6, 6)">
+                <path d="M 220 250 L 580 250 M 400 250 L 400 450" 
+                      fill="none" stroke="#ffffff" stroke-width="70" stroke-linecap="square" stroke-linejoin="miter" opacity="0.4" />
+            </g>
+
+            <!-- ===== 2. X 分支（中灰动态） ===== -->
+            <!-- 四条对角线分支，长度均为 200，在中心精确交汇 -->
+            <!-- 左上 (258.6,108.6)，右上 (541.4,108.6)，左下 (258.6,391.4)，右下 (541.4,391.4) -->
+            <!-- 阴影层（左上偏移） -->
+            <g transform="translate(-6, -6)">
+                <path d="M 400 250 L 541.4 108.6 M 400 250 L 258.6 108.6 M 400 250 L 258.6 391.4 M 400 250 L 541.4 391.4" 
+                      fill="none" stroke="#000000" stroke-width="60" stroke-linecap="square" stroke-linejoin="miter" />
+            </g>
+            <!-- 主色层（中灰） -->
+            <path d="M 400 250 L 541.4 108.6 M 400 250 L 258.6 108.6 M 400 250 L 258.6 391.4 M 400 250 L 541.4 391.4" 
+                  fill="none" stroke="#808080" stroke-width="60" stroke-linecap="square" stroke-linejoin="miter" />
+            <!-- 高光层（右下偏移） -->
+            <g transform="translate(6, 6)">
+                <path d="M 400 250 L 541.4 108.6 M 400 250 L 258.6 108.6 M 400 250 L 258.6 391.4 M 400 250 L 541.4 391.4" 
+                      fill="none" stroke="#ffffff" stroke-width="60" stroke-linecap="square" stroke-linejoin="miter" opacity="0.5" />
+            </g>
+
+            <!-- ===== 3. W 核心焦点（亮白高光） ===== -->
+            <!-- 放大尺寸以强化视觉冲击，位于中心交叉点之上 -->
+            <!-- 路径：M 300 160 L 360 300 L 400 250 L 440 300 L 500 160 -->
+            <!-- 阴影层（左上偏移） -->
+            <g transform="translate(-4, -4)">
+                <path d="M 300 160 L 360 300 L 400 250 L 440 300 L 500 160" 
+                      fill="none" stroke="#333333" stroke-width="40" stroke-linecap="square" stroke-linejoin="miter" />
+            </g>
+            <!-- 主色层（亮白） -->
+            <path d="M 300 160 L 360 300 L 400 250 L 440 300 L 500 160" 
+                  fill="none" stroke="#ffffff" stroke-width="40" stroke-linecap="square" stroke-linejoin="miter" />
+            <!-- 高光层（右下偏移） -->
+            <g transform="translate(4, 4)">
+                <path d="M 300 160 L 360 300 L 400 250 L 440 300 L 500 160" 
+                      fill="none" stroke="#ffffff" stroke-width="40" stroke-linecap="square" stroke-linejoin="miter" />
+            </g>
+        </g>
+    </g>
+
+    <!-- ==================== 中心科技核心（光晕与焦点） ==================== -->
+    <!-- 强化中心交叉点的视觉权重，营造赛博朋克的数据核心意象 -->
+    <!-- 光晕也应用相同的 skewX 变换，保持整体协调 -->
+    <g transform="translate(400, 250) skewX(-20) translate(-400, -250)">
+        <circle cx="400" cy="250" r="24" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.3" />
+        <circle cx="400" cy="250" r="32" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.1" />
+    </g>
+    <!-- 中心高亮节点不受倾斜影响，保持正圆 -->
+    <circle cx="400" cy="250" r="6" fill="#ffffff" />
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+    <!-- ==================== 核心标志（赛博彩色版） ==================== -->
+    <!-- 设计理念：X（霓虹青）与 T（洋红）在中心 (400,250) 完美交叉，W（霓虹黄）置于核心焦点 -->
+    <!-- 所有字母统一应用 skewX(-20) 变换，形成犀利的平行四边形角 -->
+    <!-- 通过阴影、主色、高光三层堆叠，塑造出鲜明的 3D 霓虹立体效果 -->
+    <!-- 背景透明，只对 WXT 形状上色，高对比度赛博朋克风格 -->
+
+    <g>
+        <!-- 公共变换：围绕中心 (400,250) 进行 skewX(-20) -->
+        <g transform="translate(400, 250) skewX(-20) translate(-400, -250)">
+            
+            <!-- ===== 1. T 分支（洋红） ===== -->
+            <!-- 水平杆与垂直杆 -->
+            <!-- 阴影层（暗洋红，左上偏移） -->
+            <g transform="translate(-6, -6)">
+                <path d="M 220 250 L 580 250 M 400 250 L 400 450" 
+                      fill="none" stroke="#990075" stroke-width="70" stroke-linecap="square" stroke-linejoin="miter" />
+            </g>
+            <!-- 主色层（洋红） -->
+            <path d="M 220 250 L 580 250 M 400 250 L 400 450" 
+                  fill="none" stroke="#ff00c8" stroke-width="70" stroke-linecap="square" stroke-linejoin="miter" />
+            <!-- 高光层（亮洋红，右下偏移） -->
+            <g transform="translate(6, 6)">
+                <path d="M 220 250 L 580 250 M 400 250 L 400 450" 
+                      fill="none" stroke="#ff66e5" stroke-width="70" stroke-linecap="square" stroke-linejoin="miter" opacity="0.6" />
+            </g>
+
+            <!-- ===== 2. X 分支（霓虹青） ===== -->
+            <!-- 四条对角线分支 -->
+            <!-- 阴影层（暗青，左上偏移） -->
+            <g transform="translate(-6, -6)">
+                <path d="M 400 250 L 541.4 108.6 M 400 250 L 258.6 108.6 M 400 250 L 258.6 391.4 M 400 250 L 541.4 391.4" 
+                      fill="none" stroke="#006699" stroke-width="60" stroke-linecap="square" stroke-linejoin="miter" />
+            </g>
+            <!-- 主色层（霓虹青） -->
+            <path d="M 400 250 L 541.4 108.6 M 400 250 L 258.6 108.6 M 400 250 L 258.6 391.4 M 400 250 L 541.4 391.4" 
+                  fill="none" stroke="#00f3ff" stroke-width="60" stroke-linecap="square" stroke-linejoin="miter" />
+            <!-- 高光层（亮青，右下偏移） -->
+            <g transform="translate(6, 6)">
+                <path d="M 400 250 L 541.4 108.6 M 400 250 L 258.6 108.6 M 400 250 L 258.6 391.4 M 400 250 L 541.4 391.4" 
+                      fill="none" stroke="#66ffff" stroke-width="60" stroke-linecap="square" stroke-linejoin="miter" opacity="0.6" />
+            </g>
+
+            <!-- ===== 3. W 核心焦点（霓虹黄） ===== -->
+            <!-- 位于中心交叉点之上，放大尺寸以强化视觉冲击 -->
+            <!-- 阴影层（暗黄，左上偏移） -->
+            <g transform="translate(-4, -4)">
+                <path d="M 300 160 L 360 300 L 400 250 L 440 300 L 500 160" 
+                      fill="none" stroke="#b38800" stroke-width="40" stroke-linecap="square" stroke-linejoin="miter" />
+            </g>
+            <!-- 主色层（霓虹黄） -->
+            <path d="M 300 160 L 360 300 L 400 250 L 440 300 L 500 160" 
+                  fill="none" stroke="#ffdd00" stroke-width="40" stroke-linecap="square" stroke-linejoin="miter" />
+            <!-- 高光层（亮黄，右下偏移） -->
+            <g transform="translate(4, 4)">
+                <path d="M 300 160 L 360 300 L 400 250 L 440 300 L 500 160" 
+                      fill="none" stroke="#ffee88" stroke-width="40" stroke-linecap="square" stroke-linejoin="miter" opacity="0.8" />
+            </g>
+        </g>
+    </g>
+
+    <!-- ==================== 中心科技核心（光晕与焦点） ==================== -->
+    <!-- 强化交叉点，营造赛博朋克的数据核心意象 -->
+    <g transform="translate(400, 250) skewX(-20) translate(-400, -250)">
+        <!-- 外围光晕（使用白色略带透明度，保持科技感） -->
+        <circle cx="400" cy="250" r="24" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.3" />
+        <circle cx="400" cy="250" r="32" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.15" />
+    </g>
+    <!-- 中心高亮节点（纯白） -->
+    <circle cx="400" cy="250" r="6" fill="#ffffff" />
+    <!-- 增加一个微弱的彩色光晕，加强赛博氛围 -->
+    <circle cx="400" cy="250" r="40" fill="none" stroke="#00f3ff" stroke-width="1" opacity="0.2" />
+</svg>
