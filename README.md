@@ -1,4 +1,4 @@
-# WXT Cyber Coder 品牌 Logo
+# WXT Cyber Coder Logo
 
 本仓库包含WXT Cyber Coder 的赛博风格 Logo，以 SVG 矢量格式提供，适用于高分辨率显示、动态交互及多场景展示。
 
